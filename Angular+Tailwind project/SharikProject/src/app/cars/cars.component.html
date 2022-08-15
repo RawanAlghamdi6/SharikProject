@@ -1,0 +1,73 @@
+
+
+<div class="flex flex-wrap items-center justify-center sm:gap-10 ">
+   <div class="text-blue-500 text-xl font-bold p-10">الـجــود بـالـمـوجـود</div>
+  <button class="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-3 sm:px-4 rounded" type="button" (click)="showform()" >شاركنا مواصلاتك  </button>
+</div>
+ 
+<div class="w-full max-w-xs mx-auto">
+  <form *ngIf="isShow" (submit)="addnewcar()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
+
+    <div class="formgroup">
+    <label for="id" class=" text-blue-500 text-sm font-bold" >الرقم : </label>
+    <input type="text" name="id" [(ngModel)]="id"  class="shadow  border border-blue-500 rounded w-full py-2 px-3 text-gray-700 "/>
+   </div> 
+
+    <div class="formgroup">
+      <label for="year" class=" text-blue-500 text-sm font-bold">السنة : </label>
+      <input type="text" name="year" [(ngModel)]="year"  class="shadow  border border-blue-500 rounded w-full py-2 px-3 text-gray-700 "/>
+   </div> 
+
+      <div class="formgroup">
+     <label for="make" class=" text-blue-500 text-sm font-bold">شركة التصنيع : </label>
+     <input type="text" name="make" [(ngModel)]="make" class="shadow  border border-blue-500 rounded w-full py-2 px-3 text-gray-700"/>
+      </div> 
+  
+      <div class="formgroup">
+      <label for="model" class=" text-blue-500 text-sm font-bold">الموديل : </label>
+      <input type="text" name="model" [(ngModel)]="model" class="shadow  border border-blue-500 rounded w-full py-2 px-3 text-gray-700"/>
+      </div> 
+
+      <div class="formgroup">
+        <label for="type" class=" text-blue-500 text-sm font-bold">النوع : </label>
+        <input type="text" name="type" [(ngModel)]="type" class="shadow  border border-blue-500 rounded w-full py-2 px-3 text-gray-700"/>
+      </div> 
+
+      <div class="formgroup">
+          <label for="img" class=" text-blue-500 text-sm font-bold">صورة : </label>
+          <input type="file" name="img"  (change)="imageChanged($event)" class="shadow  border border-blue-500 rounded w-full py-2 px-3 text-gray-700"/>
+     </div> 
+
+          <div class="formgroup">
+            <label for="phonenumber" class=" text-blue-500 text-sm font-bold">طريقة التواصل : </label>
+            <input type="text" name="phonenumber" [(ngModel)]="phonenumber" class="shadow  border border-blue-500 rounded w-full py-2 px-3 text-gray-700 mb-3" />
+          </div>
+
+    <div class="formgroup">
+      <input type="submit" name="submit" value="شاركها" class="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"/>
+    </div>
+</form>
+</div>
+  
+  
+  
+  <div class=" flex justify-center flex-wrap">
+     <div  *ngFor="let r of mycars">
+        <div class="item  bg-blue-100 rounded-lg shadow-lg transition-all m-7 hover:bg-sky-300 items-center">
+      <img [src]="r.img" class="w-full h-72 object-contain bg-white ">
+      <div class="flex flex-wrap justify-center">
+      <div class="text-center">
+      <p class="m-2  text-ms ">الرقم : {{r.id}}</p>
+      <p class="m-2  text-ms ">السنة : {{r.year}}</p>
+      <p class="m-2  text-ms ">شركة التصنيع : {{r.make}}</p></div>
+      <div class="text-center">
+      <p class="m-2  text-ms ">الموديل : {{r.model}}</p>
+      <p class="m-2  text-ms ">النوع : {{r.type}}</p>
+      <p class="m-2 pb-3  text-ms ">طريقة التواصل : {{r.phonenumber}}</p></div>
+    </div>
+         
+      </div>
+   </div>
+</div>
+
+
