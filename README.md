@@ -4,6 +4,12 @@
 
 ![Sharik homepage](docs/screenshot.png)
 
+*Homepage — category grid*
+
+![Sharik farm listings](docs/farm.png)
+
+*Farm category — `/farm` route with sample listings*
+
 ## Introduction
 
 **Sharik** (Arabic: شــــارك, "share") is a peer-to-peer rental marketplace with a
